@@ -10,13 +10,16 @@ Steps/Instructions:
 
 Required Configuration Inputs to change:
 Copy/paste the file name of the installer below
+
 DEPLOYMENT_SERVER=IP or FQDN of your Deployment Server or Splunk server (if a single, all-in-one Splunk Server)
+
 RECEIVING_INDEXER=IP or FQDN of your Splunk Indexer or Splunk server (if a single, all-in-one Splunk Server)
+
 SPLUNKUSERNAME=anything you want
 
-
+`
 msiexec.exe /i splunkforwarder-8.1.3-63079c59e632-x64-release.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER=10.0.0.21:8089 LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
-
+`
 
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/8.2.0/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
 
