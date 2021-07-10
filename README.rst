@@ -1,10 +1,6 @@
 # Splunk-UF-for-Windows-Installer
 Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 
-master branch:  |master_build_status| |master_coverage_status| |pypi_version| |pypi_downloads|
-
-develop branch: |develop_build_status| |develop_coverage_status|
-
 Steps/Instructions:
 
 1. Download the Splunk Universal Forwarder for Windows (requires username/password for Splunk.com): https://www.splunk.com/en_us/download/universal-forwarder.html 
@@ -29,9 +25,14 @@ RECEIVING_INDEXER="splunk-idx02.yourdomain.com:9997"
 
 SPLUNKUSERNAME=anything you want
 
-`
-msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER=<host:port> RECEIVING_INDEXER="<host:port>"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
-`
+.. code-block:: bash
+
+  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER=<host:port> RECEIVING_INDEXER="<host:port>"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
+
+.. code-block:: bash
+
+    pip install proxmoxer
+
 
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
 
