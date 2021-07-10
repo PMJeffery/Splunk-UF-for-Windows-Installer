@@ -1,6 +1,10 @@
 # Splunk-UF-for-Windows-Installer
 Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 
+master branch:  |master_build_status| |master_coverage_status| |pypi_version| |pypi_downloads|
+
+develop branch: |develop_build_status| |develop_coverage_status|
+
 Steps/Instructions:
 
 1. Download the Splunk Universal Forwarder for Windows (requires username/password for Splunk.com): https://www.splunk.com/en_us/download/universal-forwarder.html 
