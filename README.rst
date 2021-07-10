@@ -25,13 +25,9 @@ RECEIVING_INDEXER="splunk-idx02.yourdomain.com:9997"
 
 SPLUNKUSERNAME=anything you want
 
-.. code-block:: bash
+.. code-block:: powershell
 
   msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER=<host:port> RECEIVING_INDEXER="<host:port>"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
-
-.. code-block:: bash
-
-    pip install proxmoxer
 
 
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
