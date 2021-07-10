@@ -37,5 +37,7 @@ SPLUNKUSERNAME=anything you want
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
 
 Basic Troubleshooting steps:
+
 1. If the install fails, make sure you're running the command with admin/elevated rights: Run as Administrator
+
 2. The MSI command drops a log file, check that for errors. Drag and Drop that into Splunk for faster searching and troubleshooting.
