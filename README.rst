@@ -1,8 +1,12 @@
-# Splunk-UF-for-Windows-Installer
+=========================================
+Splunk-UF-for-Windows-Installer
+=========================================
+
 Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 
+=========================================
 Steps/Instructions:
-
+=========================================
 1. Download the Splunk Universal Forwarder for Windows (requires username/password for Splunk.com): https://www.splunk.com/en_us/download/universal-forwarder.html 
 2. Put the MSI installer in a folder accessible over the network. ex: \\fileserver\splunkUF-installer\
 3. Run your choice of CLI, cmd.exe or Powershell with the appropriate priveledges (run as Administrator)
