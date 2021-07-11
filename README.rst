@@ -52,17 +52,43 @@ Example
     RECEIVING_INDEXER="splunk-idx02.yourdomain.com:9997"
 
 
+Splunk Username and Password
+..............................................................................................................................
+
+Some admins do not want to put passwords into a command or script or as Plain Text.  To avoid doing so, use ``GENRANDOMPASSWORD=1``
+Additionally, you can increase the complexity of the password with the following.
+
+
 .. code-block:: bash
 
-    SPLUNKUSERNAME=anything you want
+    MINPASSWORDLEN=16
+    
+    MINPASSWORDDIGITLE=4
+    
+    MINPASSWORDLOWERCASELEN=4
+    
+    MINPASSWORDUPPERCASELEN=4
+    
+    MINPASSWORDSPECIALCHARLEN=4
+    
+The installer writes the credentials to ``%TEMP%\splunk.log``.  Open the file in a text editor such as Notepad and ``CTRL+F`` PASSWORD
 
 
-Example msiexec command.  Replace the DEPLOYEMENT_SERVER and RECEIVING_INDEXER with the respective IP or FQDN and respective port numbers.
-..............................................................................................................................
+For the ``SPLUNKUSERNAME`` you can use any username you wish
+
+.. code-block:: bash
+
+    SPLUNKUSERNAME=splunker
+
+====================================================================================================================================================================
+Example msiexec command. 
+====================================================================================================================================================================
+
+Replace the DEPLOYEMENT_SERVER and RECEIVING_INDEXER with the respective IP or FQDN and respective port numbers.
 
 .. code-block:: powershell
 
-  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER="192.168.10.51:8089" RECEIVING_INDEXER="192.168.1.51:9997"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
+  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER="192.168.10.51:8089" RECEIVING_INDEXER="192.168.1.51:9997"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin GENRANDOMPASSWORD=1 MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4  /quiet /L*v uf-install-logfile.txt
 
 
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
