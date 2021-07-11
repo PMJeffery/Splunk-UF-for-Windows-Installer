@@ -8,7 +8,7 @@ Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 Steps/Instructions:
 =========================================
 1. Download the Splunk Universal Forwarder for Windows (requires username/password for Splunk.com): https://www.splunk.com/en_us/download/universal-forwarder.html 
-2. Put the MSI installer in a folder accessible over the network. ex: \\\fileserver\splunkUF-installer\
+2. Put the MSI installer in a folder accessible over the network. ex: \\\\fileserver\\\splunkUF-installer\\\splunkforwarder.msi
 3. Run your choice of CLI, cmd.exe or Powershell with the appropriate priveledges (run as Administrator)
 4. Configure your command below:
 
@@ -56,9 +56,13 @@ Example
 
     SPLUNKUSERNAME=anything you want
 
+
+Example msiexec command.  Replace the DEPLOYEMENT_SERVER and RECEIVING_INDEXER with the respective IP or FQDN and respective port numbers.
+..............................................................................................................................
+
 .. code-block:: powershell
 
-  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER=<host:port> RECEIVING_INDEXER="<host:port>"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
+  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER="192.168.10.51:8089" RECEIVING_INDEXER="192.168.1.51:9997"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4 GENRANDOMPASSWORD=1 /quiet /L*v uf-install-logfile.txt
 
 
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
