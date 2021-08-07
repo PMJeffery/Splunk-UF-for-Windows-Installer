@@ -6,7 +6,7 @@ Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 
 =========================================
 Considerations:
-========================================
+=========================================
 1. Splunk Cloud customers should use just the DEPLOYMENT_SERVER parameter to get the UF connected to the Deployment Server and push the Splunk Cloud App to the UF via Deployment Server's Server Class
 2. Splunk On-Prem customers with a single, all-in-one Splunk Server should use both DEPLOYMENT_SERVER and RECEIVING_INDEXER parameters.
 3. Splunk On-Prem with Indexer Cluster should use just use DEPLOYMENT_SERVER parameter to get the UF connected to the Deployment Server and push the Indexer Cluster App to the UF via Deployment Server's Server Class.
