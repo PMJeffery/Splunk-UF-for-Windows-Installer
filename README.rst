@@ -5,6 +5,15 @@ Splunk-UF-for-Windows-Installer
 Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 
 =========================================
+Considerations:
+========================================
+1. Splunk Cloud customers should use just the DEPLOYMENT_SERVER parameter to get the UF connected to the Deployment Server and push the Splunk Cloud App to the UF via Deployment Server's Server Class
+2. Splunk On-Prem customers with a single, all-in-one Splunk Server should use both DEPLOYMENT_SERVER and RECEIVING_INDEXER parameters.
+3. Splunk On-Prem with Indexer Cluster should use just use DEPLOYMENT_SERVER parameter to get the UF connected to the Deployment Server and push the Indexer Cluster App to the UF via Deployment Server's Server Class.
+
+
+
+=========================================
 Steps/Instructions:
 =========================================
 1. Download the Splunk Universal Forwarder for Windows (requires username/password for Splunk.com): https://www.splunk.com/en_us/download/universal-forwarder.html 
@@ -34,7 +43,7 @@ Default port is 8089
 
 
 
-RECEIVING_INDEXER=IP or FQDN of your Splunk Indexer or Splunk server (if a single, all-in-one Splunk Server)
+**OPTIONAL** RECEIVING_INDEXER=IP or FQDN of your Splunk Indexer or Splunk server (if a single, all-in-one Splunk Server)
 ..............................................................................................................................
 
 
@@ -84,11 +93,22 @@ For the ``SPLUNKUSERNAME`` you can use any username you wish
 Example msiexec command. 
 ====================================================================================================================================================================
 
+**Splunk On-Prem w/ All-In-One Splunk Server**
 Replace the DEPLOYEMENT_SERVER and RECEIVING_INDEXER with the respective IP or FQDN and respective port numbers.
 
 .. code-block:: powershell
 
-  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER="192.168.10.51:8089" RECEIVING_INDEXER="192.168.1.51:9997"LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin GENRANDOMPASSWORD=1 MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4  /quiet /L*v uf-install-logfile.txt
+  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER="192.168.10.51:8089" RECEIVING_INDEXER="192.168.1.51:9997" LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin GENRANDOMPASSWORD=1 MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4  /quiet /L*v uf-install-logfile.txt
+
+
+**Splunk On-Prem w/ Indexer Cluster** or **Splunk Cloud Customer**
+
+.. code-block:: powershell
+
+  msiexec.exe /i splunkforwarder-file.msi AGREETOLICENSE=Yes DEPLOYMENT_SERVER="192.168.10.51:8089" LAUNCHSPLUNK=1 SERVICESTARTTYPE=auto SPLUNKUSERNAME=admin GENRANDOMPASSWORD=1 MINPASSWORDLEN=16  MINPASSWORDDIGITLEN=4 MINPASSWORDLOWERCASELEN=4 MINPASSWORDUPPERCASELEN=4 MINPASSWORDSPECIALCHARLEN=4  /quiet /L*v uf-install-logfile.txt
+
+
+
 
 
 Splunk UF Windows Static Configuration Documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromthecommandline#List_of_supported_flags
