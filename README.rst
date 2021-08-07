@@ -17,7 +17,7 @@ Required Configuration Inputs to Change
 =========================================
 Copy and paste the file name of the install file below
 
-DEPLOYMENT_SERVER=IP or FQDN of your Deployment Server or Splunk server (if a single, all-in-one Splunk Server)
+DEPLOYMENT_SERVER=IP or FQDN of your Deployment Server.
 ..............................................................................................................................
 
 
