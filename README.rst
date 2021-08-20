@@ -4,6 +4,10 @@ Splunk-UF-for-Windows-Installer
 
 Deploy the Splunk Universal Forwarder (UF) for Windows via MSIEXEC
 
+If you are more comfortable deploying via GPO in Active Directory, read this doc for the parameters and optional installation configuration and then go here:
+
+https://blog.edie.io/2020/03/28/deploying-splunk-universal-forwarders-via-gpo/
+
 =========================================
 Considerations:
 =========================================
