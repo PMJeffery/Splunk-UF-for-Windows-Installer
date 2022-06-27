@@ -92,7 +92,17 @@ For the ``SPLUNKUSERNAME`` you can use any username you wish
 
 .. code-block:: bash
 
-    SPLUNKUSERNAME=splunker
+    SPLUNKUSERNAME=splunker 
+
+As of Splunk Universal Forwarder v9.0, UFs supports the use of Active Directory Managed Service Accounts (MSA) and Group Manage Service Accounts (gMSA) to account for using separate AD Accounts from a security and compliance standpoint. Please consult with your Security and Compliance standards for your organization prior to installing the Splunk UF w/ MSA/gMSA accounts as well as applying the proper permissions and controls for those accounts.
+
+To include MSA/gMSA account use the following format:
+
+.. code-block:: bash
+
+    SPLUNKUSERNAME=domain\user$ LOGON_PASSWORD=<password for MSA/gMSA Account> 
+
+For further information please use the official Splunk documentation: https://docs.splunk.com/Documentation/Forwarder/9.0.0/Forwarder/InstallaWindowsuniversalforwarderfromaninstaller#Install_the_universal_forwarder_in_low-privilege_mode
 
 ====================================================================================================================================================================
 Example msiexec command. 
