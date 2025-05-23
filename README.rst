@@ -102,7 +102,7 @@ To include MSA/gMSA account use the following format:
 
     SPLUNKUSERNAME=domain\user$ LOGON_PASSWORD=<password for MSA/gMSA Account> 
 
-For further information please use the official Splunk documentation: https://docs.splunk.com/Documentation/Forwarder/9.0.0/Forwarder/InstallaWindowsuniversalforwarderfromaninstaller#Install_the_universal_forwarder_in_low-privilege_mode
+For further information please use the official Splunk documentation: https://docs.splunk.com/Documentation/Forwarder/latest/Forwarder/InstallaWindowsuniversalforwarderfromaninstaller#Install_the_universal_forwarder_in_low-privilege_mode
 
 ====================================================================================================================================================================
 Example msiexec command. 
